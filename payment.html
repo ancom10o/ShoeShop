@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" href="payment.css">
+    <script src="payment.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Thông tin khách hàng -->
+        <div class="customer-info">
+            <h2>THÔNG TIN KHÁCH HÀNG</h2>
+            <label>Email:</label>
+            <input type="email" placeholder="Email">
+            <label>Họ và Tên:</label>
+            <input type="text" placeholder="Họ Tên">
+            <label>Số điện thoại:</label>
+            <input type="tel" placeholder="Số điện thoại">
+            
+            <label>Địa chỉ:</label>
+            <input type="text" placeholder="Tỉnh Thành">
+            <input type="text" placeholder="Quận Huyện">
+            <input type="text" placeholder="Phường Xã">
+            <label>Ghi chú:</label>
+            <textarea placeholder="Ghi chú (tùy chọn)"></textarea>
+        </div>
+
+        <!-- Tổng đơn hàng -->
+        <div class="order-summary">
+            <h2>TỔNG ĐƠN HÀNG</h2>
+            
+            <!-- Danh sách sản phẩm -->
+            <div class="product-list">
+            </div>
+
+            <!-- Phương thức thanh toán -->
+            <div class="method">
+                <h3 style="margin-bottom: 20px;">Phương thức thanh toán:</h3>
+                <ul class="payment-options">
+                    <li>
+                        <label class="payment-option">
+                            <input type="radio" name="tlsale" value="cod" checked>
+                            <span class="option-text">Thanh toán khi nhận hàng</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label style="background-color: #ddd;" class="payment-option">
+                            <input type="radio" name="tlsale" value="bank" disabled>
+                            <span  class="option-text">Thanh toán bằng ngân hàng (Tạm đóng)</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <!-- Tổng tiền -->
+            <div class="total">
+                <p>Tạm tính: <span id="subtotal">0</span></p>
+                <p>Phí vận chuyển: 20.000đ</p>
+                <p style="font-size: 1.2em;"> <strong>Tổng cộng: <span id="total">20.000đ</span></strong></p>
+            </div>
+
+            <!-- Hành động -->
+            <div class="actions">
+                <a href="cart.html">◀ Quay lại giỏ hàng</a>
+                <button class="checkout">ĐẶT HÀNG</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

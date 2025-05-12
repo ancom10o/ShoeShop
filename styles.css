@@ -1,0 +1,374 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; 
+}
+
+#header {
+    height: 60px;
+    background-color: #181818;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;     
+}
+
+#nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+#logo {
+    text-align: center;
+    flex-grow: 2; 
+}
+
+#logo h2 {
+    color: #FFAC30;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#logo a {
+    text-decoration: none;
+}
+
+#nav li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 20px;
+    line-height: 60px;
+    display: block;
+    font-size: 20px;
+}
+
+#nav li a:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+#nav > li {
+    position: relative;
+}
+
+#nav > li > a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.subnav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    width: 200px;
+    border-radius: 0 0 5px 5px;
+    color: black;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.subnav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+#nav li:hover > .subnav {
+    display: block;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 20px;
+    padding: 5px;
+    width: 250px;
+    height: 44px;
+    position: relative;
+    margin-right: 40px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px 50px 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #007bff;
+}
+/* bảng tìm kiếm */
+.search-table {
+    display: none;
+    position: absolute;
+    width: 400px;
+    overflow-y: auto;
+    top: 110%;
+    right: -20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 2000;
+    background-color: #fff;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-item:hover {
+    background-color: #f9f9f9;
+}
+
+.search-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.search-info {
+    flex-grow: 1;
+}
+
+.search-info p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-info .price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search-info .old-price {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.search-item.view-all {
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+.search-item.view-all a {
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.search-item.view-all a:hover {
+    text-decoration: underline;
+}
+/* Ket thuc bang tim kiem */
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.search-button {
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-button i {
+    color: white;
+    font-size: 16px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin: 10px;
+}
+.subheader{
+    display: flex;
+    flex-grow: 0.2;
+    justify-content: space-evenly;
+}
+.icons  a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+.user-icon {
+    position: relative; 
+    display: inline-block;
+}
+
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+   border-radius: 5px ;
+    width: 150px;
+    z-index: 10;
+}
+
+.user-menu a {
+    display:block;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background: #f0f0f0;
+}
+
+.user-icon:hover .user-menu {
+    display: block;
+}
+.user-icon:hover{
+    transform: scale(1.1);
+}
+.cart-icon:hover{
+    transform: scale(1.1);
+}
+
+
+.cart-icon {
+    position: relative;
+}
+.icons .user-icons:hover a{
+    display: block;
+}
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* footer */
+.footer {
+    background-color: #181818;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-section{
+    color: rgb(243, 226, 48);
+}
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    padding: 2px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: orange;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 20px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-section a:hover{
+    color: orange;
+}
+.social-icons {
+    margin-top: 15px;
+
+}
+
+.social-icons a {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.social-icons img {
+    transition: 0.2s ease-in-out;
+}
+.social-icons a:hover img {
+    transform : scale(1.2)
+} 

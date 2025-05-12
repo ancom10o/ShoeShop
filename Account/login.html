@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="/Static/Css/login.css">
+</head>
+<body>
+        <!-- Header -->
+        <div class="header"></div>
+    <div class="header-log">
+        <h2>ĐĂNG NHẬP TÀI KHOẢN</h2>
+        <p>Bạn chưa có tài khoản? <a class="nlink" href="register.html">Đăng ký ngay</a></p>
+    </div>
+    <div class="container">
+        <form>
+            <label for="username">Tài khoản<span>*</span></label>
+            <input style="margin-top: 5px;" type="text" id="username" name="username" required>
+            
+            <label for="password">Mật khẩu<span>*</span></label>
+            <input style="margin-top: 5px;" type="password" id="password" name="password" required>
+            
+            <a style="margin-top: 10px;" class="nlink" href="#">Quên mật khẩu?</a>
+           <button class="acp" id="loginButton" type="button">Đăng nhập</button>
+
+        </form>
+        <p>Hoặc đăng nhập bằng</p>
+        <div class="social-login">
+            <button class="facebook ">Facebook</button>
+            <button class="google ">Google</button>
+        </div>
+    </div>
+</body>
+   <!-- footer -->
+    <script src="login.js"></script>
+    <Script src="../header.js"></Script>
+<div style="margin-top: 200px;" class="footer"></div>
+</html>

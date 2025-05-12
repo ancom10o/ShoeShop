@@ -1,0 +1,178 @@
+
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    z-index: 10;
+    text-align: left;
+}
+.footer{
+    width: 100vw;
+    max-width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* Container */
+.container {
+    margin: auto;
+    padding: 50px;
+    display: flex;
+    margin-bottom: 200px;
+    padding-top: 200px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #ffffff;
+    border-right: 2px solid #ddd;
+    margin-left: 100px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+}
+
+.size-options button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid gray;
+    background: white;
+    cursor: pointer;
+}
+
+.size-options button:hover {
+    background: black;
+    color: white;
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+
+/* Search */
+.search-box input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.search-box button {
+    padding: 11px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transform: translateX(-10%);
+}
+.search-box button:hover {
+    background-color: #0056b3;
+}
+/* Sort */
+.sort {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.sort select {
+    padding: 5px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 cột */
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    background: #fff;
+}
+
+/* Phân trang */
+.sidebar h3{
+    padding:10px;
+}
+.sidebar li{
+    padding: 10px;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+}
+.product img {
+    width: 70%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.product .price {
+    color: red;
+    font-weight: bold;
+}
+.old-price{
+    text-decoration: line-through;
+     color: gray;
+     display: inline;
+     margin-left: 45px;
+
+}
+.discount {
+    font-size: 14px;
+    background-color: red;
+    border-radius: 5px;
+    width: 70px;
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline;
+    margin-left: 10px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: transform 0.2s ease-in-out;
+}
+.product:hover{
+   transform: scale(1.03);
+}

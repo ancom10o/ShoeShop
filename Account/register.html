@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng kí</title>
+    <link rel="stylesheet" href="/Static/Css/login.css" />
+ 
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header"></div>
+
+    <div class="header-log">
+      <h2>ĐĂNG KÍ TÀI KHOẢN</h2>
+      <p>
+        Bạn đã có tài khoản? <a class="nlink" href="login.html">Đăng nhập</a>
+      </p>
+    </div>
+
+    <div class="container">
+      <form onsubmit="return false;">
+        <label for="username">Tài khoản<span>*</span></label>
+        <input type="text" id="username" name="username" required />
+        <span class="e_username" style="color: red"></span>
+
+        <label for="phone">Số điện thoại<span>*</span></label>
+        <input type="text" id="phone" name="phone" required />
+        <span class="e_phone" style="color: red"></span>
+
+        <label for="password">Mật khẩu<span>*</span></label>
+        <input type="password" id="password" name="password" required />
+        <span class="e_password" style="color: red"></span>
+
+        <label for="repassword">Nhập lại mật khẩu<span>*</span></label>
+        <input type="password" id="repassword" name="repassword" required />
+        <span class="e_repassword" style="color: red"></span>
+
+        <button class="acp" id="register-button" type="button">Đăng kí</button>
+      </form>
+
+      <p>Hoặc đăng nhập bằng</p>
+      <div class="social-login">
+        <button class="facebook">Facebook</button>
+        <button class="google">Google</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="margin-top: 200px" class="footer"></div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

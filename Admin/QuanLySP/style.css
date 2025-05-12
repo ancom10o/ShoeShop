@@ -1,0 +1,267 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    background: #F8F8F8;
+    /* padding: 20px; */
+    position: fixed;
+    height: 100%;
+    z-index: 2;
+}
+
+.logo {
+    color: #FFA500;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin : 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    padding-left: 10px;
+}
+
+.sidebar ul li.active {
+    background: #95c1f0;
+
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Main Content */
+.content {
+    margin-left: 220px;
+    padding: 20px;
+    margin-bottom: 100px;
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    border-bottom: 2px solid #e8e8e8;
+    padding: 10px 0;
+    justify-content: end;
+    padding: 10px 20px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white; 
+    z-index: 1;
+    height: 60px;
+}
+.navbar a {
+    text-decoration: none;
+}
+.navbar a i {
+    color: red;
+    padding-right: 5px;
+}
+.navbar .tab {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navbar .tab.active {
+    color: blue;
+    border-bottom: 2px solid blue;
+}
+
+.navbar .logout {
+    color: red;
+    cursor: pointer;
+}
+
+/* thêm sản phẩm */
+.product-form {
+    display: flex;
+    padding-top: 60px;
+}
+
+.left, .right {
+    width: 50%;
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #aba9a9;
+    border-radius: 5px;
+}
+
+/* Ảnh sản phẩm */
+.image-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.image-box {
+    width: 120px;
+    height: 120px;
+    border: 2px dashed #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3c48cd;
+    background-color: #f8f8f8;
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Nút xóa ảnh */
+.remove-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.image-box:hover .remove-btn {
+    display: block;
+}
+
+/* Định dạng riêng cho ô "Thêm ảnh sản phẩm" */
+.add-image {
+    border: 2px dashed #3c48cd;
+    background-color: #eef1ff;
+    color: #3c48cd;
+    font-weight: bold;
+}
+
+/* Kích thước */
+.size-options {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.size-options button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+/* Nút Thêm sản phẩm */
+.submit-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background: darkblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+.det-btn {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    background: darkred;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+.det-btn:hover{
+    background: red;
+}
+.submit-btn:hover {
+    background: blue;
+}
+.node{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    float: right;
+    padding: 0 5%;
+}
+
+
+/* Popup thông báo */
+#overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10; 
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    margin-left: 100px;
+}
+#popup button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#popup button:hover {
+    background: #0056b3;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang sản phẩm</title>
+    <link rel="stylesheet" href="more.css">
+    <script src="scripts.js"></script>
+</head>
+<script src="new.js"></script>
+<body>
+     <!-- Header -->
+    <div class="header"></div>
+    <div class="container">
+        <aside class="sidebar">
+
+            <h3>DÒNG SẢN PHẨM</h3>
+            <ul>
+                <li><input type="radio" name="product"> Bóng đá</li>
+                <li><input type="radio" name="product"> Bóng rổ</li>
+                <li><input type="radio" name="product"> Tennis</li>
+                <li><input type="radio" name="product"> Golf</li>
+                <li><input type="radio" name="product"> Bóng chuyền</li>
+                <li><input type="radio" name="product"> Tập luyện</li>
+                <li><input type="radio" name="product"> Chạy bộ</li>
+            </ul>
+        
+            <h3>THƯƠNG HIỆU</h3>
+            <ul>
+                <li><input type="radio" name="brand"> Nike</li>
+                <li><input type="radio" name="brand"> Adidas</li>
+                <li><input type="radio" name="brand"> Puma</li>
+                <li><input type="radio" name="brand"> Reebok</li>
+                <li><input type="radio" name="brand"> Vans</li>
+            </ul>
+        
+            <h3>GIỚI TÍNH</h3>
+            <ul>
+                <li><input type="radio" name="gender"> Nam</li>
+                <li><input type="radio" name="gender"> Nữ</li>
+                <!-- <li><input type="radio" name="gender"> Bé Trai</li>
+                <li><input type="radio" name="gender"> Bé Gái</li> -->
+                <li><input type="radio" name="gender"> Unisex</li>
+            </ul>
+        
+            <h3>SALE</h3>
+            <ul>
+                <li><input type="radio" name="tlsale" checked> Mặc định</li>
+                <li><input type="radio" name="tlsale"> 50-70%</li>
+                <li><input type="radio" name="tlsale"> 30-50%</li>
+                <li><input type="radio" name="tlsale"> 10-30%</li>
+            </ul>
+        
+        </aside>
+        
+        
+
+        <!-- Danh sách sản phẩm -->
+        <main>
+            <div style="margin-left: 80px;" class="search-box">
+                <input style="border-radius: 5px 0 0 5px;" type="text" id="search-input" placeholder="Tìm kiếm sản phẩm ..." onkeyup="searchProducts()">
+                <button style="border-radius: 0 5px 5px 0;" onclick="searchProducts()" ><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="sort">
+                <label for="sort">Sắp xếp theo:</label>
+                <select id="sort">
+                    <option>Mặc định</option>
+                    <option>Giá tăng dần</option>
+                    <option>Giá giảm dần</option>
+                </select>
+            </div>
+
+            <div class="product-grid"></div>
+            <div class="pagination"></div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+   <!-- footer -->
+   <div style="  z-index: 1;" class="footer"></div>
+</html>

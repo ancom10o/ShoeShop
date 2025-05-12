@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<script>
+    window.onload = () => {
+        const url = new URL(window.location.href);
+        const productID = url.searchParams.get("productID");
+       
+    }
+</script>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h1 class="logo">1STORE</h1>
+        <ul>
+            <li class="active"><a href="/Admin/TongThe/TongThe.html">Tổng Quan</a></li>
+            <li ><a href="/Admin/QuanLySP/ThemSP.html">Thêm sản phẩm</a></li>
+            <li><a href="/Admin/QuanLyDonHang/Donhang.html">Thông tin đơn hàng</a></li>
+            <li><a href="/Admin/QuanLyTaiKhoan/TaiKhoan.html">Quản lý Tài Khoản</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <nav class="navbar">
+            <a href="/Acount/login.html"></i><span class="logout"><i class="fa-solid fa-user"></i>ĐĂNG XUẤT</span></a>
+        </nav>
+
+        <!-- Form thêm sản phẩm -->
+        <section class="product-form">
+            <div class="left">
+                <label>TÊN SẢN PHẨM</label>
+                <input id="productName" type="text" placeholder="Nhập tên sản phẩm ...." value="Giày chạy bộ XYZ">
+                
+              <label for="productCategory">PHÂN LOẠI</label>
+<select id="productCategory">
+  <option>Bóng rổ</option>
+  <option>Bóng Đá</option>
+  <option>Golf</option>
+  <option>Chạy bộ</option>
+  <option>Tập Luyện</option>
+    <option>Cầu lông</option>
+</select>
+
+<label for="productBrand">THƯƠNG HIỆU</label>
+<select id="productBrand">
+  <option>Nike</option>
+  <option>Adidas</option>
+  <option>Puma</option>
+  <option>Reebok</option>
+  <option>Vans</option>
+</select>
+
+<label for="productGender">GIỚI TÍNH</label>
+<select id="productGender">
+  <option>Nam</option>
+  <option>Nữ</option>
+  <option>Unisex</option>
+</select>
+
+                
+                <label>GIÁ NIÊM YẾT (VNĐ)</label>
+                <input id="productPrice" type="number" placeholder="Nhập giá niêm yết sản phẩm" value="3000000">
+
+                <label>TỈ LỆ GIẢM GIÁ (%)</label>
+                <input id="Discount" type="number" placeholder="Nhập tỉ lệ giảm giá" value="0">
+
+                <label>SỐ LƯỢNG</label>
+                <input id="productQuantity" type="number" placeholder="Nhập số lượng" value="30">
+            </div>
+
+            <div class="right">
+                <label>ẢNH SẢN PHẨM</label>
+                <div class="image-container" id="imageContainer">
+                    <div class="image-box">
+                        <img src="/Static/Image/product/1011b548-401-sr-lt-glb-result.webp" alt="Sản phẩm">
+                        <button class="remove-btn">✖</button>
+                    </div>
+                  
+                
+                    <div class="image-box add-image">Thêm ảnh sản phẩm</div>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                </div>
+
+        
+        
+                <label>MÀU SẮC</label>
+                    <input id="productColor" type="text" placeholder="Nhập màu sắc sản phẩm " value="Bright Orange">
+
+
+                <label>SIZE</label>
+                <input id="productSize" type="text" placeholder="Nhập số" value="42">
+                
+            </div>
+        </section>
+
+        <div class="node">
+            <button class="submit-btn">Lưu sản phẩm</button>
+            <button class="det-btn">Xóa</button>
+        </div>
+    </main>
+    <!-- node -->
+    <div id="overlay"></div>
+    <div id="popup">
+        <p id="popup-message" style="padding: 20px;"></p>
+        <a href="/Admin/TongThe/TongThe.html"><button id="closePopup">Đóng</button></a>
+    </div>
+</div>
+</body>
+<script src="EditSP.js"></script>
+
+</html>

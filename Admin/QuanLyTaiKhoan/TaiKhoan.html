@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <link rel="stylesheet" href="Taikhoan.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h1 class="logo">1STORE</h1>
+        <ul>
+            <li  ><a href="/Admin/TongThe/TongThe.html">Tổng Quan</a></li>
+            <li><a href="/Admin/QuanLySP/ThemSP.html">Thêm sản phẩm</a></li>
+            <li ><a href="/Admin/QuanLyDonHang/Donhang.html">Quản lí đơn hàng</a></li>
+            <li class="active"><a href="/Admin/QuanLyTaiKhoan/TaiKhoan.html">Quản lý Tài Khoản</a></li>
+        </ul>
+    </aside>
+
+    <main class="content">
+        <nav class="navbar">
+            <a href="/Acount/login.html"></i><span class="logout"><i class="fa-solid fa-user"></i>ĐĂNG XUẤT</span></a>
+        </nav>
+    <div class="container">
+        <h2 style="margin-bottom: 20px;">Tài khoản khách hàng</h2>
+        <div  class="search-box">
+            <input style="border-radius: 5px 0 0 5px;" type="text" id="search-input" placeholder="Tìm kiếm mã khách hàng  ..." onkeyup="searchProducts()">
+            <button style="border-radius: 0 5px 5px 0 ;" ><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="customer-list">
+            <div class="customer-list">
+                <table id="customer-table">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tài Khoản</th>
+                            <th>SĐT</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-tbody">
+                        <tr>
+                            <td>KH001</td>
+                            <td>user1</td>
+                            <td>0912345678</td>
+                            <td><a href="../QuanLyTaiKhoan/ChiTietKhachHang.html"><button class="detail-btn">Chi tiết</button></a></td>
+                        </tr>
+                
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pagination"></div>
+        <a href="/"></a>
+    </div>
+</body>
+<script src="TaiKhoan.js"></script>
+</html>
