@@ -1,50 +1,61 @@
 const sql = require("mssql");
 const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require('../config/jwt.config');
 
-const secretKey = "your_secret_key"; // Nên đặt trong biến môi trường .env
-
-// Hàm tạo token JWT
+// Hàm tạo token JWT với xử lý lỗi
 const generateToken = (payload) => {
-  return jwt.sign(payload, secretKey, { expiresIn: "2h" });
+  try {
+    return jwt.sign(payload, JWT_SECRET, { expiresIn: "2h" });
+  } catch (err) {
+    console.error("Lỗi tạo token:", err);
+    throw new Error("Không thể tạo token");
+  }
 };
 
 const login = async (req, res) => {
   const { username, password } = req.body;
- 
 
   try {
-    const request = new sql.Request();
+    const request = new sql.Request(global.pool); // Sử dụng global pool
     const result = await request
       .input("username", sql.VarChar, username)
       .query("SELECT * FROM [User] WHERE Username = @username");
 
     const user = result.recordset[0];
 
-
     if (!user) {
-      return res.status(404).json({ message: "Account not found" });
+      return res.status(404).json({
+        success: false,
+        message: "Tài khoản không tồn tại"
+      });
     }
 
     if (password !== user.Password) {
-      return res.status(401).json({ message: "Wrong password" });
+      return res.status(401).json({
+        success: false,
+        message: "Sai mật khẩu"
+      });
     }
 
-    // Tạo JWT token bằng hàm generateToken
+    // Tạo token với thông tin user
     const token = generateToken({
       id: user.User_ID,
       name: user.Username,
       role: user.Role,
     });
 
- 
     return res.status(200).json({
+      success: true,
       token,
       role: user.Role,
-      username: user.Username,
+      username: user.Username
     });
   } catch (err) {
-    console.error("Login error:", err);
-    return res.status(500).json({ message: "Server error" });
+    console.error("Lỗi đăng nhập:", err);
+    return res.status(500).json({
+      success: false,
+      message: "Lỗi máy chủ"
+    });
   }
 };
 
